@@ -21,6 +21,7 @@ Oh no wait you still have to add :
 
     //=require myplugin.js
 
+![jail](/charly/jail/raw/master/jail.png)
 
 ## Usage (alt)
 
@@ -29,7 +30,7 @@ While waiting for a bin/jail feature:
     rails console
     > Jail::Github.find("name", "repo").install
 
-But it need to exist in the yaml file !!!
+But it must exist in the yaml file !!!
 
 ## Contribute
 
