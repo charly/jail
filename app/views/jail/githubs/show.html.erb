@@ -1,0 +1,10 @@
+
+<h2><%=link_to "install", request.url + "/install" %></h2>
+<ul>
+  <%- @github.contents.each do |cont| %>
+    <li><%= link_to cont.name, cont._links[:html] %></li>
+  <% end %>
+</ul>
+
+
+<%=raw @github.readme %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jail</title>
+  <%= stylesheet_link_tag    "jail/application", :media => "all" %>
+  <%#= javascript_include_tag "jail/application" %>
+  <%#= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <h1><%=link_to "Jail", root_path %></h1>
+    Puts your assets in rails
+  </div>
+
+  <div id="page">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

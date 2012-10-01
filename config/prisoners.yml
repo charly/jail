@@ -1,0 +1,36 @@
+
+# Forms
+simsalabim/sisyphus: 
+  :js: ""
+  :css: ""
+  :descr: "form:"
+ivaynberg/select2: 
+  :js: "select2.js"
+  :css: "select2.css"
+  :descr: "form:"
+devluis/ddslick: 
+  :js: "js/ddslick.js"
+  :descr: "form:"
+
+# Images
+tapmodo/Jcrop:
+  :js: "js/jquery.Jcrop.js"
+  :css: "css/jquery.Jcrop.css"
+  :img: "css/Jcrop.gif"
+  :descr: "image:"
+
+# Map
+hpneo/gmaps:
+  :js: "gmaps.js"
+  :descr: "map:"
+
+# Essentials
+scotthamper/cookies: 
+  :js: "cookies.js"
+  :descr: "essentials:"
+
+# Yup
+arturadib/strapdown: 
+  :js: "src/strapdown.js"
+  :css: "src/strapdown.css"
+  :desc: ""
