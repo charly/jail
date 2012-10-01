@@ -18,15 +18,28 @@ tapmodo/Jcrop:
   :css: "css/jquery.Jcrop.css"
   :img: "css/Jcrop.gif"
   :descr: "image:"
+#it seems the many files feature is missing here
+gilbitron/nivo-slider:
+  :js: "jquery.nivo.slider.js"
+  :css: "themes/default/default.css"
+  :descr: "image:slider"
 
 # Map
 hpneo/gmaps:
   :js: "gmaps.js"
   :descr: "map:"
 
+# Navigation
+davist11/jquery-stickem:
+  :js: "jquery.stickem.js"
+  :descr: "navigation:"
+
 # Essentials
 scotthamper/cookies: 
   :js: "cookies.js"
+  :descr: "essentials:"
+briancherne/jquery-hoverintent:
+  :js: "jquery.hoverIntent.js"
   :descr: "essentials:"
 
 # Yup
