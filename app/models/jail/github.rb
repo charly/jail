@@ -5,7 +5,7 @@ module Jail
 
     # not memoizing for now
     def self.githublist
-      @githublist = ::YAML.load_file(Jail::Engine.root.join("config", "jqplugins.yml")).to_hash
+      @githublist = ::YAML.load_file(Jail::Engine.root.join("config", "prisoners.yml")).to_hash
     end
 
     def self.all
