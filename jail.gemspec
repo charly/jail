@@ -9,14 +9,14 @@ Gem::Specification.new do |s|
   s.version     = Jail::VERSION
   s.authors     = ["Charles Sistovaris"]
   s.email       = ["charlysisto@gmail.com"]
-  s.homepage    = "http://github/charly/jail"
+  s.homepage    = "https://github.com/charly/jail"
   s.summary     = "Puts your assets in rails"
   s.description = %Q{
     Developers facility to install or remove jQuery plugins hosted on github by 
     adding proper javascripts, stylesheets and images in vendor/assets.
   }
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.8"
