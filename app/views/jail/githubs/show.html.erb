@@ -1,5 +1,9 @@
 
-<h2><%=link_to "install", request.url + "/install" %></h2>
+<h2>
+  <%=link_to "install", request.url + "/install" %>
+  |
+  <%=link_to "remove", request.url + "/remove" %>
+</h2>
 <ul>
   <%- @github.contents.each do |cont| %>
     <li><%= link_to cont.name, cont._links[:html] %></li>

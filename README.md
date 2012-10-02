@@ -17,11 +17,15 @@ config/routes.rb
 http://localhost:3000/jail/
 
 Chose a plugin, follow the link, Install. You're done.
+
+![jail](/charly/jail/raw/master/jail.png)
+
+---
+
 Oh no wait you still have to add :
 
     //=require myplugin.js
 
-![jail](/charly/jail/raw/master/jail.png)
 
 ## Usage (alt)
 
@@ -49,7 +53,6 @@ Other approaches where :
 
 - plugin installed? (check file existence)
 - plugin outdated? (overkill ?)
-- clean routes
 - bin/jail
 
 
