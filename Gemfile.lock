@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jail (0.0.1)
+    jail (0.0.2)
       github_api
       rails (~> 3.2.8)
 
@@ -37,6 +37,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.3)
+    coderay (1.0.7)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     faraday (0.8.4)
@@ -62,6 +63,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8)
     mime-types (1.19)
     multi_json (1.3.6)
     multipart-post (1.1.5)
@@ -73,6 +75,12 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.2)
     polyglot (0.3.3)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    pry-rails (0.2.2)
+      pry (>= 0.9.10)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -106,6 +114,7 @@ GEM
     rspec-expectations (2.11.3)
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.11.3)
+    slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -124,5 +133,6 @@ PLATFORMS
 DEPENDENCIES
   jail!
   jquery-rails
+  pry-rails
   rspec
   sqlite3
