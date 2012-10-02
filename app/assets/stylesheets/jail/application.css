@@ -26,3 +26,22 @@ body, div { margin: 0; padding:0;}
 
 #header a {
   color: #EEE;}
+
+ul.jaillinks {
+  width: 400px;
+  list-style: none;
+}
+
+ul.jaillinks li a {
+  color: #777;
+  display: block;
+  text-decoration: none;
+  padding: 6px;
+  border-bottom: thin dashed #DDD;
+} 
+ul.jaillinks li a:hover {
+  background-color: #DDD}
+
+
+
+
