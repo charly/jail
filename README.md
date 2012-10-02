@@ -26,6 +26,16 @@ Oh no wait you still have to add :
 
     //=require myplugin.js
 
+Oh & you're not happy with the actual set of Jquery plugins proposed. Add your own!
+
+config/initializers/jail.rb
+
+    module Jail
+      LOGIN = 'login:password' #optional
+      Github.add_githublist(Rails.root.join("config/jail.backboneplugins.yml"))
+      Github.add_githublist(Rails.root.join("config/jail.whatever.yml"))
+    end
+
 
 ## Usage (alt)
 
@@ -51,6 +61,7 @@ Other approaches where :
 
 ## TODO
 
+- group_by descr
 - plugin installed? (check file existence)
 - plugin outdated? (overkill ?)
 - bin/jail

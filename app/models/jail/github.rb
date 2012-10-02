@@ -2,11 +2,15 @@ module Jail
   # This is a wrapper around ::Github 
   class Github
     attr_accessor :github, :name, :repo, :path, :spec
+    cattr_accessor :githublist
 
-    # not memoizing for now
-    def self.githublist
-      @githublist = ::YAML.load_file(Jail::Engine.root.join("config", "prisoners.yml")).to_hash
+    def self.add_githublist(yaml_path)
+      hash = YAML.load_file(yaml_path).to_hash
+      self.githublist= self.githublist.merge(hash)
     end
+
+    self.githublist={}
+    add_githublist(Jail::Engine.root.join("config", "jail.jqueryplugins.yml"))
 
     def self.all
       githublist.keys
