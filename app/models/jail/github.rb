@@ -12,8 +12,9 @@ module Jail
     self.githublist={}
     add_githublist(Jail::Engine.root.join("config", "jail.jqueryplugins.yml"))
 
+    # TODO : raise if missing descr:
     def self.all
-      githublist.keys
+      githublist.group_by {|k, v| v[:descr].match(/\w+:/).to_s if v[:descr]}
     end
 
     # Use this to initialize Github

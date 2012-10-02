@@ -1,10 +1,14 @@
 
-<%# @githubs.each do |jqgithub| %>
-<ul class='jaillinks'>
-  <%- @githubs.each do |k| %>
-    <li><%= link_to "#{k}", "/jail/#{k}" %></li>
-  <% end %>
-</ul>
+<%#= debug @githubs.group_by {|k, v| v[:descr]} %>
 
+
+<%- @githubs.each do |descr, n_githubs| %>
+  <h3><%= descr %></h3>
+  <ul class='jaillinks'>
+    <%- n_githubs.each do |k| %>
+      <li><%= link_to "#{k[0]}", "/jail/#{k[0]}" %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 

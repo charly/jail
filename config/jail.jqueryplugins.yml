@@ -11,7 +11,7 @@
 documentcloud/visualsearch:
   :js: "lib/js/visualsearch.js"
   :css: "lib/css/workspace.css"
-  :desc: "form: awesome search"
+  :descr: "form: awesome search"
 #simsalabim/sisyphus: #same as below
 micho/jquery.localStorageTextareas:
   :js: "jquery.localStorageTextareas.js"
@@ -44,6 +44,7 @@ gilbitron/nivo-slider:
 happyworm/jplayer:
   :js: "jquery.jplayer/jquery.jplayer.js"
   :swf: "jquery.jplayer/Jplayer.swf" # er not supported
+  :descr: "media:" # er not supported
 
 #
 # Table
@@ -80,7 +81,7 @@ rviscomi/trunk8:
 arturadib/strapdown: 
   :js: "src/strapdown.js"
   :css: "src/strapdown.css"
-  :desc: "text: markdown parser"
+  :descr: "text: markdown parser"
 
 #
 # Map
