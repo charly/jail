@@ -27,6 +27,14 @@ body, div { margin: 0; padding:0;}
 #header a {
   color: #EEE;}
 
+.notice {
+  text-align: center;
+  background-color: #BCED91;
+  border: thin solid #629632;
+  color:; #629632;
+  padding: 18px;
+}
+
 ul.jaillinks {
   width: 400px;
   list-style: none;
@@ -41,6 +49,7 @@ ul.jaillinks li a {
 } 
 ul.jaillinks li a:hover {
   background-color: #DDD}
+
 
 
 
