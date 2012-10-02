@@ -14,7 +14,7 @@ documentcloud/visualsearch:
   :desc: "form: awesome search"
 #simsalabim/sisyphus: #same as below
 micho/jquery.localStorageTextareas:
-  :js: "jquery.localStorageTextareas"
+  :js: "jquery.localStorageTextareas.js"
   :descr: "form: remembers your form data ala gmail"
 ivaynberg/select2: 
   :js: "select2.js"
