@@ -45,9 +45,9 @@ module Jail
       github.markdown.render :text => text
     end
 
-    def read(path)
-      # TODO : raise error if path's not a file
-      self.path= path
+    # TODO : raise error if path's not a file
+    def read(apath)
+      self.path= apath
       text = Base64.decode64 contents.content
     end
 
@@ -58,11 +58,24 @@ module Jail
       download(:img)
     end
 
+    def remove
+      delete_file(:js)
+      delete_file(:css)
+      delete_file(:img)
+    end
+
     private
     def download(type = :js)
       return if spec[type].blank?
-      target(type).open('w') {|f| f.write( read(spec[:type]) )}
+      text = read(spec[type])
+      target(type).open('w') {|f| f.write(text) }
     end
+
+    def delete_file(type = :js)
+      return if spec[type].blank?
+      self.path = spec[type]
+      t = target(type) and t.exist? and t.delete
+    end      
 
     def target(type)
       filename= Pathname(path).basename.to_s

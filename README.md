@@ -47,7 +47,6 @@ Other approaches where :
 
 ## TODO
 
-- remove plugin
 - plugin installed? (check file existence)
 - plugin outdated? (overkill ?)
 - clean routes

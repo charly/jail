@@ -13,7 +13,13 @@ module Jail
     def install
       @github = Github.find(params[:name], params[:repo])
       @github.install
-      redirect_to root_path
+      redirect_to( root_path, :notice => "Installed!" )
+    end
+
+    def remove
+      @github = Github.find(params[:name], params[:repo])
+      @github.remove
+      redirect_to( root_path, :notice => "Removed!" )
     end
 
   end
