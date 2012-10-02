@@ -1,49 +1,118 @@
+# # #
+#
+#         Jquery Plugins on Github
+#    with description & essential file paths
+#
+# # #
 
 # Forms
-simsalabim/sisyphus: 
-  :js: ""
-  :css: ""
-  :descr: "form:"
+#
+# alexgorbatchev/jquery-textext: #needs mutlifile upgrade
+documentcloud/visualsearch:
+  :js: "lib/js/visualsearch.js"
+  :css: "lib/css/workspace.css"
+  :desc: "form: awesome search"
+#simsalabim/sisyphus: #same as below
+micho/jquery.localStorageTextareas:
+  :js: "jquery.localStorageTextareas"
+  :descr: "form: remembers your form data ala gmail"
 ivaynberg/select2: 
   :js: "select2.js"
   :css: "select2.css"
-  :descr: "form:"
+  :descr: "form: "
 devluis/ddslick: 
   :js: "js/ddslick.js"
-  :descr: "form:"
+  :descr: "form: select with style"
 
+#
 # Images
+#
 tapmodo/Jcrop:
   :js: "js/jquery.Jcrop.js"
   :css: "css/jquery.Jcrop.css"
   :img: "css/Jcrop.gif"
-  :descr: "image:"
-#it seems the many files feature is missing here
+  :descr: "image: for croping images"
+#it seems the multifile feature is missing here
 gilbitron/nivo-slider:
   :js: "jquery.nivo.slider.js"
   :css: "themes/default/default.css"
-  :descr: "image:slider"
+  :descr: "image: slider"
 
-# Map
-hpneo/gmaps:
-  :js: "gmaps.js"
-  :descr: "map:"
+#
+# Media
+#
+happyworm/jplayer:
+  :js: "jquery.jplayer/jquery.jplayer.js"
+  :swf: "jquery.jplayer/Jplayer.swf" # er not supported
 
-# Navigation
-davist11/jquery-stickem:
-  :js: "jquery.stickem.js"
-  :descr: "navigation:"
+#
+# Table
+#
+bwsewell/tablecloth:
+  :js: "assets/css/tablecloth.js"
+  :css: "assets/css/tablecloth.css"
+  :descr: "table:"
+warpech/jquery-handsontable:
+ :js: "jquery.handsontable.js"
+ :css: "jquery.handsontable.css"
+ :descr: "table: minimalistic excel like"
 
-# Essentials
-scotthamper/cookies: 
-  :js: "cookies.js"
-  :descr: "essentials:"
-briancherne/jquery-hoverintent:
-  :js: "jquery.hoverIntent.js"
-  :descr: "essentials:"
+#
+# Graphs
+#
+dmitrybaranovskiy/raphael:
+  :js: "raphael.js"
+  :descr: "graph:"
+oesmith/morris.js:
+  :js: "morris.js"
+  :descr: "graph:"
 
-# Yup
+#
+# Text
+#
+leaverou/prism:
+  :js: "prism.js"
+  :css: "prism.css"
+  :descr: "text: syntax highlighter"
+rviscomi/trunk8:
+  :js: "trunk8.js"
+  :descr: "text: truncates text"
 arturadib/strapdown: 
   :js: "src/strapdown.js"
   :css: "src/strapdown.css"
-  :desc: ""
+  :desc: "text: markdown parser"
+
+#
+# Map
+#
+hpneo/gmaps:
+  :js: "gmaps.js"
+  :descr: "map: the ref I think"
+
+#
+# Navigation
+#
+davist11/jquery-stickem:
+  :js: "jquery.stickem.js"
+  :descr: "navigation: div staying while scrolling"
+
+#
+# Essentials
+#
+scotthamper/cookies: 
+  :js: "cookies.js"
+  :descr: "essentials: with lots of chocolate"
+briancherne/jquery-hoverintent:
+  :js: "jquery.hoverIntent.js"
+  :descr: "essentials: delay callback on hover"
+briancray/tooltipsy:
+  :js: "tooltipsy.source.js"
+  :descr: "essentials: minimal tool tip"
+#patricklodder/jquery-zclip
+#voronianski/jquery.avgrund.js:
+
+# Other
+
+
+#addyosmani/jquery-ui-bootstrap/:
+
