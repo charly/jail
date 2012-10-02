@@ -13,7 +13,7 @@ module Jail
     end
 
     # Use this to initialize Github
-    def self.find(aname = "harvesthq", arepo = "chosen", apath = nil)
+    def self.find(aname, arepo, apath = nil)
       self.new.tap do |yo|
         yo.name= aname
         yo.repo= arepo
@@ -39,10 +39,17 @@ module Jail
       github.repos.contents.get(name, repo, path)
     end
 
+    # TODO : split in 2 methods for consistency
     def readme
       text = Base64.decode64 github.repos.contents.readme(name, repo).content
       github.markdown.render :text => text
-    end 
+    end
+
+    def read(path)
+      # TODO : raise error if path's not a file
+      self.path= path
+      text = Base64.decode64 contents.content
+    end
 
     def install
       #contents._links[:git]
@@ -54,9 +61,7 @@ module Jail
     private
     def download(type = :js)
       return if spec[type].blank?
-      self.path= spec[type]
-      text = Base64.decode64 contents.content
-      target(type).open('w') {|f| f.write(text)}
+      target(type).open('w') {|f| f.write( read(spec[:type]) )}
     end
 
     def target(type)
