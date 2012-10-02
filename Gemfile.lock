@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jail (0.0.2)
+    jail (0.1.0)
       github_api
       rails (~> 3.2.8)
 

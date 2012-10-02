@@ -22,20 +22,21 @@ Chose a plugin, follow the link, Install. You're done.
 
 ---
 
-Oh no wait you still have to add :
+Oh wait you might have to add :
 
     //=require myplugin.js
 
-Oh & you're not happy with the actual set of Jquery plugins proposed. Add your own!
+And if you're not happy with the actual set of Jquery plugins proposed. Add your own!
 
 config/initializers/jail.rb
 
     module Jail
       LOGIN = 'login:password' #optional
-      Github.add_githublist(Rails.root.join("config/jail.backboneplugins.yml"))
-      Github.add_githublist(Rails.root.join("config/jail.whatever.yml"))
+      Jail::Github.add_githublist(Rails.root.join("config/jail.backboneplugins.yml"))
+      Jail::Github.add_githublist(Rails.root.join("config/jail.whatever.yml"))
     end
 
+Buth the list is bound to grow quickly.
 
 ## Usage (alt)
 
@@ -48,7 +49,7 @@ But it must exist in the yaml file !!!
 
 ## Contribute
 
-The list of plugins are in a yaml file : config/prisoners.yml
+The list of plugins are in a yaml file : config/jail.jqueryplugins.yml
 Add more plugins and pull a request!
 Would it be better to have them in the db ?
 
