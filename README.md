@@ -61,7 +61,6 @@ Other approaches where :
 
 ## TODO
 
-- group_by descr
 - plugin installed? (check file existence)
 - plugin outdated? (overkill ?)
 - bin/jail
