@@ -1,8 +1,9 @@
 # Jail
 
-Copying, pasting, 'curling', running after all those jquery-plugin files, trying to keep track, loosing them, pulling your hair off. This must stop !
-Put all your jquery plugins (or any other assets) in rails once and for all. 
-And if you want to free them, just open the gate.
+Found a nice Jquery plugin you'd like to try out ? Now starts the RSIs :
+Download, unpack, find the source files, open your app folder, drag in the javascript folder, drag in the stylesheet folder, drag in the images folder...  Oh but wait, there's a better version of (modal/fancybox/slider/datepicker...). Download, unpack, find the source... _This must stop !_
+
+Meet Jail : it puts all your jquery plugins (or any other assets) in Rails, with just one click!
 
 ## Install
 
@@ -58,7 +59,7 @@ Would it be better to have them in the db ?
 
 Other approaches where : 
   - create a gem for each jquery plugin. But that means updating the gem with the latest release of each plugin and nobody wants to keep track of dozens of repos. 
-  - Do a generator instead but, while the thought came to me while writing this gem, I didn't find any remote feature in Thor (may be wrong though since rails templates has it).
+  - Do a generator instead but, while the thought came to me while writing this gem, I didn't find any remote feature in Thor (may be wrong though since rails templates has it). **update** : it has one (of course)!
 
 ## TODO
 
