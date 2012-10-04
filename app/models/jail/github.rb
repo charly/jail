@@ -40,8 +40,9 @@ module Jail
       self
     end
 
+    # do I need this method ?
     def repos
-      github.repos.get(name, repo)
+      @repos ||= github.repos.get(name, repo)
     end
 
     def contents
