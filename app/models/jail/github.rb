@@ -1,7 +1,8 @@
 module Jail  
   # This is a wrapper around ::Github 
   class Github
-    attr_accessor :github, :name, :repo, :path, :spec
+    attr_reader    :github, :name, :repo, :spec
+    attr_accessor  :path
     cattr_accessor :githublist
 
     def self.add_githublist(yaml_path)
@@ -10,29 +11,33 @@ module Jail
     end
 
     self.githublist={}
-    add_githublist(Jail::Engine.root.join("config", "jail.jqueryplugins.yml"))
+    add_githublist( Jail::Engine.root.join("config", "jail.jqueryplugins.yml") )
 
     # TODO : raise if missing descr:
     def self.all
       githublist.group_by {|k, v| v[:descr].match(/\w+:/).to_s if v[:descr]}
     end
 
-    # Use this to initialize Github
-    def self.find(aname, arepo, apath = nil)
-      self.new.tap do |yo|
-        yo.name= aname
-        yo.repo= arepo
-        yo.path= apath
-        yo.spec= githublist["#{yo.name}/#{yo.repo}"]
+    # Uhh useless ? Or AR Sexy ?
+    def self.find(name, repo, path = nil)
+      new(name, repo).tap do |yo|
+        yo.path= path
       end
     end
 
-    # Sets github attr which holds the Github (API) instance
-    # used by repo, contents, readme etc
-    def initialize
-      @github = defined?(Jail::LOGIN) ? 
+    def initialize(name, repo)
+      @name= name
+      @repo= repo
+      @spec= self.class.githublist["#{@name}/#{@repo}"]
+      @github = defined?(Jail::LOGIN) ?
                   ::Github.new({ :basic_auth => Jail::LOGIN }) :
                   ::Github.new
+    end
+
+    # another AR alike for chaining
+    def where(path)
+      self.path= path
+      self
     end
 
     def repos
@@ -50,9 +55,8 @@ module Jail
       github.markdown.render :text => text
     end
 
-    # TODO : raise error if path's not a file
-    def read(apath)
-      self.path= apath
+    def read
+      #raise "blah" unless contents.type == "file"
       text = Base64.decode64 contents.content
     end
 
@@ -72,7 +76,7 @@ module Jail
     private
     def download(type = :js)
       return if spec[type].blank?
-      text = read(spec[type])
+      text = where(spec[type]).read
       target(type).open('w') {|f| f.write(text) }
     end
 
@@ -93,6 +97,5 @@ module Jail
         Rails.root.join("vendor/assets/images/#{filename}")
       end
     end
-
   end
 end
