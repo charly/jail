@@ -53,8 +53,15 @@ module Jail
     end
 
     def mapped_files
-      # or => files.group_by {|file| Pathname(file.name).extname }
       files.map(&:name).group_by {|name| Pathname(name).extname }
+    end
+
+    def install(params)
+      files_to_write = params.map {|file, num| file if num == "1"}.compact!
+
+      files_to_write.each do |name|
+        file(name).download()
+      end
     end
 
   end

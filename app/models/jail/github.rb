@@ -61,42 +61,48 @@ module Jail
       text = Base64.decode64 contents.content
     end
 
-    def install
-      #contents._links[:git]
-      download(:js)
-      download(:css)
-      download(:img)
+    def download(type = nil)
+      target(type).open('w') {|f| f.write( read ) }
     end
 
-    def remove
-      delete_file(:js)
-      delete_file(:css)
-      delete_file(:img)
-    end
-
-    private
-    def download(type = :js)
-      return if spec[type].blank?
-      text = where(spec[type]).read
-      target(type).open('w') {|f| f.write(text) }
-    end
-
-    def delete_file(type = :js)
-      return if spec[type].blank?
-      self.path = spec[type]
+    def delete(type = nil)
       t = target(type) and t.exist? and t.delete
     end      
 
-    def target(type)
-      filename= Pathname(path).basename.to_s
+    def target(type=nil)
+      filename= Pathname(path).basename
+      type = type || extract_type(filename)
+      
       case type
-      when :js
+      when :js, :coffee
         Rails.root.join("vendor/assets/javascripts/#{filename}")
-      when :css
+      when :css, :scss, :less
         Rails.root.join("vendor/assets/stylesheets/#{filename}")
-      when :img
+      when :img, :png, :gif, :jpeg
         Rails.root.join("vendor/assets/images/#{filename}")
       end
     end
+
+    def extract_type(filename)
+      type = Pathname(filename).extname
+      type = type.gsub(/\./, "").to_sym
+    end
+    
+    #
+    # Depends on yaml files: dont use elsewhere
+    #
+    def write_all
+      [:js, :css, :img].each do |type|
+        where(spec[type]).download(type) if spec[type]
+      end
+    end
+    alias install write_all
+
+    def delete_all
+      [:js, :css, :img].each do |type|
+        where(spec[type]).delete(type) if spec[type]
+      end
+    end
+    alias remove delete_all
   end
 end
