@@ -3,7 +3,9 @@
 Found a nice Jquery plugin you'd like to try out ? Now starts the RSIs :
 Download, unpack, find the source files, open your app folder, drag in the javascript folder, drag in the stylesheet folder, drag in the images folder...  Oh but wait, there's a better version of (modal/fancybox/slider/datepicker...). Download, unpack, find the source... _This must stop !_
 
-Meet Jail : it puts all your jquery plugins (or any other assets) in Rails, with just one click!
+Meet Jail : it puts all your Javascripts (& cie) in Rails, with just a click!
+
+**NOW** With the 158 (sept/12) [CDNJS libraries](/cdnjs/cdnjs).
 
 ## Install
 
@@ -18,6 +20,7 @@ config/routes.rb
 http://localhost:3000/jail/
 
 Chose a plugin, follow the link, Install. You're done.
+
 
 ![jail](/charly/jail/raw/master/jail.png)
 
@@ -63,9 +66,17 @@ Other approaches where :
 
 ## TODO
 
-- plugin installed? (check file existence)
-- plugin outdated? (overkill ?)
-- bin/jail
+  - Pjax for laoding plugin
+  - plugin installed? (check file existence)
+  - plugin outdated? (overkill ?)
+  - bin/jail
 
+## Changelog
+
+  - 0.1.1 CDNJS Integration + Some Github Refactoring
+
+## Thanks to
+
+- [Walter Davis](/walterdavis) for suggesting the awesome idea of including the cdnjs library.
 
 This project rocks and uses MIT-LICENSE.
