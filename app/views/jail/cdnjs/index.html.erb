@@ -1,0 +1,11 @@
+<%#=debug @cdnjs %>
+
+<h1>
+  <%= link_to "CDNJS", "https://github.com/cdnjs/cdnjs" %> List of Javascripts Libraries
+</h1>
+
+<ul class='jaillinks'>
+  <%- @cdnjs.each do |name| %>
+    <li><%= link_to name, "/jail/cdnjs/#{name}" %></li>
+  <% end %>
+</ul>

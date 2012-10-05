@@ -8,8 +8,16 @@
 </head>
 <body>
   <div id="header">
-    <h1><%=link_to "Jail", root_path %></h1>
-    Puts your assets in rails
+    <h1>
+      <%=link_to "Jail", root_path %> 
+      <span class='smaller'> - Puts your Js in Rails</span>
+    </h1>
+    <div style="text-align: center;">
+      <%= link_to "Jail's list", "/jail/" %>
+      |
+      <%= link_to "Cdnjs's List", "/jail/cdnjs" %>
+    </div>
+    
   </div>
 
   <div id="page">

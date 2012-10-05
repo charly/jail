@@ -12,7 +12,9 @@
  *= require_tree .
  */
 
-body, div { margin: 0; padding:0;}
+body, div { 
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+  margin: 0; padding:0;}
 
 
 #header, #page, #footer {
@@ -25,28 +27,41 @@ body, div { margin: 0; padding:0;}
   background-color: #444}
 
 #header a {
+  text-decoration: none;
   color: #EEE;}
+
+fieldset {
+  color: #444;
+  background-color: #CCC}
+
+legend {
+  padding: 3px 9px;
+  color: #CCC;
+  background-color: #444;
+  border: thin solid #222;
+}
+
+.smaller {
+  font-size: .7em;}
 
 .notice {
   text-align: center;
   background-color: #BCED91;
   border: thin solid #629632;
   color:; #629632;
-  padding: 18px;
-}
+  padding: 18px;}
 
 ul.jaillinks {
   width: 400px;
-  list-style: none;
-}
+  list-style: none;}
 
 ul.jaillinks li a {
   color: #777;
   display: block;
   text-decoration: none;
   padding: 6px;
-  border-bottom: thin dashed #DDD;
-} 
+  border-bottom: thin dashed #DDD;}
+
 ul.jaillinks li a:hover {
   background-color: #DDD}
 

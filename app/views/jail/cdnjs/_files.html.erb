@@ -1,0 +1,6 @@
+<%- @cdnjs.mapped_files.each do |ext, n_files| %>
+  <p><%= ext %></p>
+  <%- n_files.each do |file| %>
+    <br><%= file %>
+  <% end %>
+<% end %>

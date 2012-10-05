@@ -1,0 +1,26 @@
+<%- if flash[:notice] %>
+  <div class='notice'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<h1><%= @cdnjs.name %></h1>
+<p><%= @cdnjs.description %></p>
+
+<%= form_tag "/jail/cdnjs/#{@cdnjs.name}" do %>
+  <fieldset>
+    <legend>Files To Install (uncheck unnecesseray)</legend>
+    <%- @cdnjs.files.map(&:name).each do |name| %>
+      <p>  
+        <%= label_tag name %>
+        <%= check_box('files', name, {:checked => true}, checked_value="1", unchecked_value="0") %>
+      </p>
+    <% end %>
+    <%= submit_tag "Install" %> 
+  </fieldset>
+<% end %>
+
+<p>homepage: <%= link_to @cdnjs.homepage, @cdnjs.homepage %></p>
+<%- @cdnjs.repositories.map(&:url).each do |url| %>
+  <p>repository : <%= link_to url, url %></p>
+<% end %>
