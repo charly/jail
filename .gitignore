@@ -3,3 +3,9 @@ log/*.log
 pkg/
 test/
 jail-*
+spec/cassettes/
+spec/dummy/db/*.sqlite3
+spec/dummy/log/*.log
+spec/dummy/tmp/
+spec/dummy/.sass-cache
+spec/dummy/vendor/assets/

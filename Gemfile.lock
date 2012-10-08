@@ -3,7 +3,7 @@ PATH
   specs:
     jail (0.1.1)
       github_api
-      rails (~> 3.2.8)
+      rails (~> 3.1)
 
 GEM
   remote: http://rubygems.org/
@@ -35,9 +35,11 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.2)
     arel (3.0.2)
     builder (3.0.3)
     coderay (1.0.7)
+    crack (0.3.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     faraday (0.8.4)
@@ -114,6 +116,11 @@ GEM
     rspec-expectations (2.11.3)
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.11.3)
+    rspec-rails (2.11.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (~> 2.11.0)
     slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -126,6 +133,10 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
+    vcr (2.2.5)
+    webmock (1.8.11)
+      addressable (>= 2.2.7)
+      crack (>= 0.1.7)
 
 PLATFORMS
   ruby
@@ -134,5 +145,7 @@ DEPENDENCIES
   jail!
   jquery-rails
   pry-rails
-  rspec
+  rspec-rails
   sqlite3
+  vcr
+  webmock

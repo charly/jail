@@ -1,0 +1,4 @@
+clint/alcatraz:
+  :js: "killer.js"
+  :css: "gangsta.css"
+  :desc: "form:"

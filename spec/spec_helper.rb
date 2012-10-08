@@ -4,6 +4,19 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+ENV["RAILS_ENV"] = "test"
+require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+
+require "vcr"
+require "webmock/rspec"
+require 'rspec/rails'
+
+ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
+
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[File.join(ENGINE_RAILS_ROOT, "spec/support/**/*.rb")].each {|f| require f }
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
@@ -14,4 +27,5 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 end
