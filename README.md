@@ -13,7 +13,7 @@ Meet Jail : it puts all your Javascripts (& cie) in Rails, with just a click!
 
 config/routes.rb
 
-    mount Jail::Engine => "/jail"
+    mount Jail::Engine => "/jail" if Rails.env.development?
 
 ## Usage
 
