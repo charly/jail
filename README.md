@@ -66,17 +66,24 @@ Other approaches where :
 
 ## TODO
 
-  - Pjax for laoding plugin
+  - Pjax for loading plugin
   - plugin installed? (check file existence)
   - plugin outdated? (overkill ?)
   - bin/jail
 
 ## Changelog
 
-  - 0.1.1 CDNJS Integration + Some Github Refactoring
+  ### 0.2.0
+    - Cdnjs now shows **subfolder content**
+    - fixed bug trying to download a folder
+    - (fix) creates non existing path before downloading
+
+  ### 0.1.1
+    - CDNJS Integration + Some Github Refactoring
 
 ## Thanks to
 
 - [Walter Davis](/walterdavis) for suggesting the awesome idea of including the cdnjs library.
 
 This project rocks and uses MIT-LICENSE.
+
