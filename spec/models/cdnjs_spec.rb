@@ -54,12 +54,24 @@ describe Jail::Cdnjs, :vcr do
     end
   end
 
+  describe "#tree" do
+    let(:jail) { Jail::Cdnjs.find("twitter-bootstrap") }
+
+    it "returns an Array of Hashie::Mash" do
+      jail.tree.first.should be_a(Hashie::Mash)
+    end
+
+    it "returns a bucket of nested leaves" do
+      jail.tree.select {|t| Pathname(t.path).parent.basename.to_s == "css"}.
+        map(&:name).should include("bootstrap.css", "bootstrap-responsive.css")
+    end
+  end
+
   describe "#mapped_files" do
     it "groups files by their extension" do
       pending "Not using this method (FOR DELETION ?)"
       true
     end
   end
-
 
 end

@@ -10,17 +10,24 @@
 <%= form_tag "/jail/cdnjs/#{@cdnjs.name}" do %>
   <fieldset>
     <legend>Files To Install (uncheck unnecesseray)</legend>
-    <%- @cdnjs.files.map(&:name).each do |name| %>
-      <p>  
-        <%= label_tag name %>
-        <%= check_box('files', name, {:checked => true}, checked_value="1", unchecked_value="0") %>
-      </p>
+    <%- @cdnjs.tree.each do |file| %>
+      <%- if file.type == "dir" %>
+        <h3><%= file.name %></h3>
+      <% end %>
+      <%- if file.type == "file" %>
+        <p>  
+          <%= label_tag file.name %>
+          <%= check_box('files', file.path, {:checked => true}, checked_value="1", unchecked_value="0") %>
+        </p>
+      <% end %>
     <% end %>
     <%= submit_tag "Install" %> 
   </fieldset>
 <% end %>
 
 <p>homepage: <%= link_to @cdnjs.homepage, @cdnjs.homepage %></p>
-<%- @cdnjs.repositories.map(&:url).each do |url| %>
-  <p>repository : <%= link_to url, url %></p>
+<%- unless @cdnjs.repositories.blank? %>
+  <%- @cdnjs.repositories.map(&:url).each do |url| %>
+    <p>repository : <%= link_to url, url %></p>
+  <% end %>
 <% end %>

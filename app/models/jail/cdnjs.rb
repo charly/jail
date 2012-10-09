@@ -44,12 +44,29 @@ module Jail
       Pathname(root_path).join(version)
     end
 
-    def files
-      @files ||= github.where(version_path).contents
+    def version_files
+      @version_files ||= github.where(version_path).contents
     end
 
-    def file(name)
-      github.where(version_path.join(name))
+    # build a depth first tree
+    def tree
+      @tree and return @tree 
+      @tree = []
+      file_set = version_files
+
+      while child = file_set.shift
+        tree << child #if child.dir?
+
+        if child.type == "dir"
+          file_set.unshift( github.where(child.path).contents ).flatten!
+        end
+      end
+
+      @tree
+    end
+
+    def file(path)
+      github.where(path)
     end
 
     def mapped_files
@@ -57,7 +74,7 @@ module Jail
     end
 
     def install(params)
-      files_to_write = params.map {|file, num| file if num == "1"}.compact!
+      files_to_write = params.map {|file, checkbox_val| file if checkbox_val == "1"}.compact
 
       files_to_write.each do |name|
         file(name).download()
