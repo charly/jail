@@ -6,9 +6,17 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="text-align:center;">
+  <header>
+    <h1>Jail Demo Site</h1>
+  </header>
 
-<%= yield %>
+  <section>
+    <%= yield %>
+  </section>
 
+  <footer>
+    Don't forget your soap!
+  </footer>
 </body>
 </html>
