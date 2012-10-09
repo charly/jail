@@ -62,7 +62,8 @@ module Jail
     end
 
     def download(type = nil)
-      target(type).open('w') {|f| f.write( read ) }
+      t = target(type) and t.parent.mkpath
+      t.open('w') {|f| f.write( read ) }
     end
 
     def delete(type = nil)
