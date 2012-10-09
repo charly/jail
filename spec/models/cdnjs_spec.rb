@@ -3,9 +3,9 @@ require "spec_helper"
 # TODO : TAFT
 describe Jail::Cdnjs, :vcr do
 
+  let(:jail) { Jail::Cdnjs.find("chosen") }
+
   describe "#package" do
-    let(:jail) { Jail::Cdnjs.find("chosen") }
-    
     it "holds a Hashie of parsed package.json" do
       jail.package.should be_a(Hashie::Mash)
     end
@@ -28,30 +28,29 @@ describe Jail::Cdnjs, :vcr do
   end
 
   describe "#version_path" do
-    let(:jail) { Jail::Cdnjs.find("chosen") }
+    it "returns a Pathname" do
+      jail.version_path.should be_a(Pathname)
+    end
 
     it "it has the pathname of latest version" do
       jail.version_path.to_s.should match(/libs\/chosen\/\d+.\d+.\d+/)
     end
   end
 
-  describe "#files" do
-    let(:jail) { Jail::Cdnjs.find("chosen") }
-
+  describe "#version_files" do
     it "lists the files in #version_path" do
-      jail.files.map(&:path).last.should match(/libs\/chosen\/\d+.\d+.\d+/)
+      jail.version_files.map(&:path).last.should match(/libs\/chosen\/\d+.\d+.\d+/)
     end
     
     it "github API resp listing the (latest) version folder" do
-      jail.files.map(&:name).should include("chosen-sprite.png", "chosen.css", "chosen.jquery.js")
+      jail.version_files.map(&:name).should include("chosen-sprite.png", "chosen.css", "chosen.jquery.js")
     end
   end
 
   describe "#file(path)" do
-    let(:jail) { Jail::Cdnjs.find("chosen") }
-
     it "it holds the github instance with the path" do
-      jail.file("chosen.css").contents.type.should == "file"
+      path = jail.version_path.join("chosen.css")
+      jail.file(path).contents.type.should == "file"
     end
   end
 
