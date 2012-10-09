@@ -74,11 +74,13 @@ Other approaches where :
 ## Changelog
 
   ### 0.2.0
+
     - Cdnjs now shows **subfolder content**
     - fixed bug trying to download a folder
     - (fix) creates non existing path before downloading
 
   ### 0.1.1
+  
     - CDNJS Integration + Some Github Refactoring
 
 ## Thanks to
